@@ -1,0 +1,29 @@
+{
+  "name": "Tab Declutter",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Automatically manages tabs",
+  "icons": {
+    "32": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_title": "Tab Declutter",
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "js": ["popup.js"],
+    "matches": ["<all_urls>"]
+  }],
+  "options_page": "options.html",
+  "permissions": [
+    "tabs",
+    "storage",
+    "background",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
